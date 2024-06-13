@@ -13,6 +13,7 @@ jobs:
       uses: webfactory/ssh-agent@v0.5.3
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
     - name: Sync files to server
       run: rsync -avz --delete ./ kane@20.2.86.192:/www/wordpress
