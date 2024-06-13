@@ -15,5 +15,5 @@ jobs:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
         known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
 
-    - name: Sync files to server
+    - name: Sync files to servers
       run: rsync -avz --delete ./ kane@20.2.86.192:/www/wordpress
