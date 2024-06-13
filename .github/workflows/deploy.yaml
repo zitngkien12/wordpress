@@ -1,0 +1,20 @@
+name: Deploy WordPress
+on:
+  push:
+    branches: [master]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - run: echo Starting deploy
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - run: echo Setup SSH ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Set up SSH 
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    # - name: Sync files to server
+    #   run: rsync -avz --delete ./ kane@20.2.86.192:/www/wordpress

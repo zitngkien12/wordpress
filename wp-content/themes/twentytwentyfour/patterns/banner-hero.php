@@ -15,7 +15,7 @@
 
 		<!-- wp:heading {"textAlign":"center","fontSize":"x-large","level":1} -->
 		<h1 class="wp-block-heading has-text-align-center has-x-large-font-size"><?php echo esc_html_x(
-      'A commitment to innovation and sustainability - Kane is editting here',
+      'A commitment to innovation and sustainability - Kane is deploying',
       'Heading of the hero section',
       'twentytwentyfour'
   ); ?></h1>
